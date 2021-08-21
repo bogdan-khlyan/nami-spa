@@ -1,0 +1,54 @@
+<template>
+  <div class="product-list">
+    <product v-for="product in products" :key="product._id" :data="product"/>
+    <div v-if="products.length === 0" class="product-list__empty">
+      <span>Пусто</span>
+    </div>
+  </div>
+</template>
+
+<script>
+import Product from '@/app/main/AppMenu/Product'
+import {productService} from '@/app/product/product.service'
+
+export default {
+  name: 'product-list',
+  components: { Product },
+  props: {
+    categoryId: { type: String }
+  },
+  computed: {
+    products () {
+      return this.$store.state.products.list
+          .filter(item => item.categoryId === this.categoryId)
+    }
+  },
+  mounted() {
+    if(this.products.length === 0)
+      productService.getList(this.categoryId)
+    // if(this.products.length === 0)
+    //   this.$api.product.getList(this.pagination.page, this.categoryId)
+  }
+}
+</script>
+
+<style scoped lang="scss">
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &__empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 300px;
+
+    font-family: Neucha, sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+}
+</style>

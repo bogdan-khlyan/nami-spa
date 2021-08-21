@@ -1,0 +1,34 @@
+<template>
+  <div class="distance-exceeded">
+    <div>
+      <img src="../images/distance-exceeded.png" alt="">
+<!--      <button class="btn-address">Адрес введен верно</button>-->
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'distance-exceeded',
+  mounted () { },
+  methods: { }
+}
+</script>
+
+<style scoped lang="scss">
+.distance-exceeded {
+  width: 100%;
+  min-height: 220px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+
+  img {
+    width: 100%;
+  }
+
+}
+</style>

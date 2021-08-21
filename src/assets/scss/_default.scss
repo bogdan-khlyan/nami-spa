@@ -1,0 +1,25 @@
+* {
+  outline: none!important;
+}
+
+.el-loading-mask {
+  z-index: 900!important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.el-tooltip__popper, .el-notification {
+  font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;
+}
+
+.el-notification {
+  z-index: 3000!important;
+
+  .el-notification__content {
+    text-align: unset;
+  }
+}
