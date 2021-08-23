@@ -5,7 +5,7 @@
         <img v-if="windowWidth > 660" src="@/assets/images/logo-footer.png" alt="">
         <img v-else src="@/assets/images/logo-circle.png" alt="">
       </router-link>
-      <a class="c" href="mailto:es.bogdan.hlyan@gmail.com">© Bogdan Khlyan, 2021</a>
+      <a class="c" href="mailto:es.bogdan.hlyan@gmail.com">made by Bogdan Khlyan, 2021</a>
     </div>
   </div>
 </template>
