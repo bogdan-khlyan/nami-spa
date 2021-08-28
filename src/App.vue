@@ -11,7 +11,7 @@
 import LoginModal from '@/components/modals/LoginModal'
 import HeaderCollapse from '@/components/header/components/HeaderCollapse'
 import Cart from '@/app/cart/Cart'
-import {categoryService} from '@/app/category/category.service'
+import {productService} from '@/app/product/product.service'
 
 export default {
   name: 'App',
@@ -21,7 +21,7 @@ export default {
     this.resize()
   },
   created() {
-    categoryService.getList()
+    productService.getAll()
   },
   methods: {
     resize: function () {

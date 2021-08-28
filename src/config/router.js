@@ -44,7 +44,7 @@ const router = new VueRouter({
                 name: 'successful-order',
                 component: SuccessfulOrder
             }, {
-                path: '/product',
+                path: '/:productId',
                 name: 'product',
                 component: Product
             }]

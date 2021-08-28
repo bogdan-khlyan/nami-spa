@@ -15,10 +15,10 @@
 <!--      </el-carousel>-->
     </div>
     <div class="product__content">
-      <div class="product__content--name">
+      <router-link :to="`/${data._id}`" class="product__content--name">
         <span>{{ data.title }}</span>
         <i>{{ data.weight }}г</i>
-      </div>
+      </router-link>
       <div class="product__content--info">
         <span>{{ data.description }}</span>
       </div>
@@ -217,6 +217,7 @@ export default {
       }
 
       &--name {
+        display: block;
         height: 30px;
 
         > span {

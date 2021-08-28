@@ -1,25 +1,23 @@
 <template>
-  <div class="product">
+  <div v-if="product" class="product">
     <div class="product__content">
       <div class="product__media">
         <h1>РОЛЛ КИ-ДО</h1>
         <div class="product__media--image">
-          <img class="image" src="@/app/product/product.png" alt="">
+          <img class="image" :src="'https://namisushi.ru' + product.images[0]" alt="">
           <img class="bg" src="@/app/product/bg.png" alt="">
         </div>
       </div>
       <div class="product__info">
         <label>Состав</label>
         <div class="product__info--list">
-          <span>сыр Чеддер</span>
-          <span>сыр Чеддер</span>
-          <span>сыр Чеддер</span>
+          <span v-for="item in product.ingredients" :key="item">{{item}}</span>
         </div>
         <div class="product__info--descr">
-          Самый сырный ролл нашего меню - ролл Ки-до! Сочетание трёх сыров - творожного, Чеддера и российского - в дополнении с жареным угрём, создают особую гамму вкуса, для передачи который просто не хватает слов!
+          {{product.description}}
         </div>
         <div class="product__info--cost">
-          <span>240 ₽ - 260 г</span>
+          <span>{{product.cost}} ₽ - {{product.weight}} г</span>
         </div>
         <div class="product__info--actions">
           <button>Добавить в коризну</button>
@@ -31,7 +29,18 @@
 
 <script>
 export default {
-  name: 'product'
+  name: 'product',
+  computed: {
+    productId() {
+      return this.$route.params.productId
+    },
+    product() {
+      return this.$store.state.products.list.find(product => product._id === this.productId)
+    }
+  },
+  mounted() {
+    scroll(0, 0)
+  }
 }
 </script>
 

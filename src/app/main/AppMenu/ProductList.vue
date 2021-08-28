@@ -9,7 +9,6 @@
 
 <script>
 import Product from '@/app/main/AppMenu/Product'
-import {productService} from '@/app/product/product.service'
 
 export default {
   name: 'product-list',
@@ -22,12 +21,6 @@ export default {
       return this.$store.state.products.list
           .filter(item => item.categoryId === this.categoryId)
     }
-  },
-  mounted() {
-    if(this.products.length === 0)
-      productService.getList(this.categoryId)
-    // if(this.products.length === 0)
-    //   this.$api.product.getList(this.pagination.page, this.categoryId)
   }
 }
 </script>

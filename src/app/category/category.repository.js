@@ -5,7 +5,7 @@ class CategoryRepository {
     
     async getList () {
         const response = await axios.get(`/api/categories`)
-        return response.data
+        return response.data.categories
     }
     
 }
