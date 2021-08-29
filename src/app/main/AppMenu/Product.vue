@@ -20,7 +20,9 @@
         <i>{{ data.weight }}г</i>
       </router-link>
       <div class="product__content--info">
-        <span>{{ data.description }}</span>
+        <perfect-scrollbar style="height: 74px" :options="{ wheelPropagation: false }" ref="scroll">
+          <span>{{ data.description }}</span>
+        </perfect-scrollbar>
       </div>
       <div class="product__content--footer">
         <div class="price">
@@ -279,7 +281,7 @@ export default {
           margin-top: 20px;
         }
 
-        > span {
+        span {
           font-family: Montserrat, sans-serif;
           font-style: normal;
           font-weight: normal;
