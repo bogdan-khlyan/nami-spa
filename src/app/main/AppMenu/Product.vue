@@ -21,7 +21,7 @@
       </router-link>
       <div class="product__content--info">
         <perfect-scrollbar style="height: 74px" :options="{ wheelPropagation: false }" ref="scroll">
-          <span>{{ data.description }}</span>
+          <span class="description">{{ data.description }}</span>
         </perfect-scrollbar>
       </div>
       <div class="product__content--footer">
@@ -69,7 +69,7 @@ export default {
 
     .product__content--name > span,
     .product__content--name > i,
-    .product__content--info > span {
+    .product__content--info .description {
       color: #FFFFFF!important;
     }
 
@@ -281,12 +281,14 @@ export default {
           margin-top: 20px;
         }
 
-        span {
+        .description {
           font-family: Montserrat, sans-serif;
           font-style: normal;
           font-weight: normal;
           font-size: 13px;
           line-height: 16px;
+          white-space: pre-line;
+          word-break: break-word;
 
           color: #808080;
 
