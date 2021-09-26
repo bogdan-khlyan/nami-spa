@@ -99,6 +99,7 @@ export default {
     }
 
     &--name {
+      max-width: 220px!important;
       width: max-content;
       margin: 0;
       text-align: left;
