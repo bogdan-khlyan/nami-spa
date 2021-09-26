@@ -6,14 +6,12 @@
         :with-header="false">
       <div class="content">
         <mobile-header v-if="windowWidth < 640"/>
-        <perfect-scrollbar :options="{ wheelPropagation: false }" ref="scroll">
+        <scroll ref="scroll">
           <transition name="fade" mode="out-in">
-            <index v-show="mode === 'INDEX'" @changeMode="changeMode" />
+            <index v-if="mode === 'INDEX'" @changeMode="changeMode" />
+            <order v-else-if="mode === 'ORDER'" @changeMode="changeMode" />
           </transition>
-          <transition name="fade" mode="out-in">
-            <order v-if="mode === 'ORDER'" @changeMode="changeMode" />
-          </transition>
-        </perfect-scrollbar>
+        </scroll>
       </div>
     </el-drawer>
   </div>
@@ -23,35 +21,33 @@
 import Index from '@/app/cart/components/Index'
 import Order from '@/app/cart/components/Order'
 import MobileHeader from '@/app/cart/components/common/MolileHeader'
+import Scroll from '@/components/Scroll'
 
 export default {
   name: 'cart',
-  components: { Index, Order, MobileHeader },
+  components: { Index, Order, MobileHeader, Scroll },
   computed: {
     isShowCart() { return this.$store.state.isShowCart },
     windowWidth () { return this.$store.state.windowWidth }
-  },
-  watch: {
-    isShowCart () {
-      this.$nextTick(() => {
-        this.$nextTick(() => this.scrollTop())
-      })
-      // if (val) document.body.style.overflowY = 'hidden'
-      // else document.body.style.overflowY = 'scroll'
-    }
   },
   data() {
     return {
       mode: 'INDEX'
     }
   },
+  watch: {
+    isShowCart() {
+      this.$nextTick(() => {
+        this.$nextTick(() => {
+          this.$refs.scroll.scrollTop()
+        })
+      })
+    }
+  },
   methods: {
-    scrollTop: function () {
-      this.$refs.scroll.$el.scrollTop = 0
-    },
     changeMode: function (mode) {
       this.mode = mode
-      this.$nextTick(() => this.scrollTop())
+      this.$refs.scroll.scrollTop()
     },
     close: function () {
       if (this.mode !== 'INDEX') this.changeMode('INDEX')
