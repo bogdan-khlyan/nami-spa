@@ -4,10 +4,12 @@
     <login-modal/>
     <header-collapse/>
     <cart/>
+    <cookie-popup/>
   </div>
 </template>
 
 <script>
+import CookiePopup from "@/components/CookiePopup";
 import LoginModal from '@/components/modals/LoginModal'
 import HeaderCollapse from '@/components/header/components/HeaderCollapse'
 import Cart from '@/app/cart/Cart'
@@ -15,7 +17,7 @@ import {productService} from '@/app/product/product.service'
 
 export default {
   name: 'App',
-  components: { LoginModal, HeaderCollapse, Cart },
+  components: { LoginModal, HeaderCollapse, Cart, CookiePopup },
   mounted() {
     window.addEventListener('resize', this.resize)
     this.resize()
@@ -38,6 +40,7 @@ export default {
 @import './assets/scss/style';
 * { outline: none }
 #app {
+  position: relative;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
