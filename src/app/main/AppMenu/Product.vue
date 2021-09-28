@@ -18,7 +18,7 @@
     </div>
     <div class="product__content">
       <a class="product__content--name">
-        <span>{{ data.title }}</span>
+        <span :style="styles">{{ data.title }}</span>
         <i>{{ data.weight }}г</i>
       </a>
       <div class="product__content--info">
@@ -54,6 +54,13 @@ export default {
     data: { type: Object }
   },
   computed: {
+    styles() {
+      if (this.data.title.length > 14) {
+        return 'font-size: 16px;line-height: 18px;'
+      } else {
+        return ''
+      }
+    },
     description() {
       if (this.data.description.length > 75) {
         return this.data.description.slice(0, 75) + '...'
@@ -235,10 +242,13 @@ export default {
       }
 
       &--name {
-        display: block;
+        display: flex;
         height: 30px;
 
         > span {
+          display: block;
+          width: 100%;
+
           text-align: left;
           float: left;
 
