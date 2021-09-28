@@ -30,7 +30,7 @@
         <div class="price">
           <span>{{ data.cost }}₽</span>
         </div>
-        <div class="btn">
+        <div @click="stopPropagation" class="btn">
           <button v-if="count < 1" @click="toCard" class="product__btn-to-cart">В корзину</button>
           <plus-minus class="plus-minus-btn" v-else :id="data._id" />
         </div>
@@ -61,6 +61,9 @@ export default {
     toCard: function () {
       this.$store.commit('pushProductToCart', this.data._id)
     },
+    stopPropagation: function ($event) {
+      $event.stopPropagation()
+    }
   }
 }
 </script>

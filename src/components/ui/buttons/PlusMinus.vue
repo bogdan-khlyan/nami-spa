@@ -1,5 +1,5 @@
 <template>
-  <div class="plus-minus">
+  <div class="plus-minus" @click="($event) => $emit('click', $event)">
     <div @click="dec" class="plus-minus__circle">-</div>
     <div class="plus-minus__value">{{count}}</div>
     <div @click="inc" class="plus-minus__circle">+</div>
