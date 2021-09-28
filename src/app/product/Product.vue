@@ -113,6 +113,7 @@ export default {
 
       .image {
         width: 280px;
+        height: 280px;
         object-fit: contain;
         @media screen and (max-width: 480px) {
           width: 224px;
