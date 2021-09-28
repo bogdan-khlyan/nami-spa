@@ -55,6 +55,14 @@ const router = new VueRouter({
 export default router
 
 router.beforeEach(async (to, from, next) => {
-    next()
+    if (from.name === 'product' && from.params.productId && to.name === 'main') {
+        await next()
+        await router.push({
+            query: { scrollTo: from.params.productId }
+        })
+        return
+    } else {
+        next()
+    }
     if (to.name === 'main' && from.name !== null && from.name !== 'main') scroll(0, 0)
 });

@@ -1,6 +1,8 @@
 <template>
   <div class="product-list">
-    <product v-for="product in products" :key="product._id" :data="product"/>
+    <product v-for="product in products" :key="product._id"
+             :id="`product-card-${product._id}`"
+             :data="product"/>
     <div v-if="products.length === 0" class="product-list__empty">
       <span>Пусто</span>
     </div>
