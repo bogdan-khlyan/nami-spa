@@ -22,9 +22,12 @@
         <i>{{ data.weight }}г</i>
       </a>
       <div class="product__content--info">
-        <perfect-scrollbar style="height: 74px" :options="{ wheelPropagation: false }" ref="scroll">
-          <span class="description">{{ data.description }}</span>
-        </perfect-scrollbar>
+<!--        <perfect-scrollbar style="height: 74px" :options="{ wheelPropagation: false }" ref="scroll">-->
+<!--          <span class="description">{{ description }}</span>-->
+<!--        </perfect-scrollbar>-->
+        <div>
+          <span class="description">{{ description }}</span>
+        </div>
       </div>
       <div class="product__content--footer">
         <div class="price">
@@ -51,6 +54,13 @@ export default {
     data: { type: Object }
   },
   computed: {
+    description() {
+      if (this.data.description.length > 75) {
+        return this.data.description.slice(0, 75) + '...'
+      } else {
+        return this.data.description
+      }
+    },
     count () {
       if(this.$store.state.cart.list.find(item => item._id === this.data._id))
         return this.$store.state.cart.list.find(item => item._id === this.data._id).count

@@ -86,6 +86,9 @@ export default {
                 // Откроем балун.
                 activeRoute.balloon.open();
                 this.loading = false
+              } else {
+                this.error = 'ADDRESS_NOT_FOUND'
+                this.loading = false
               }
             });
 
