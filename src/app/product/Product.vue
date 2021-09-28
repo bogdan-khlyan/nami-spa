@@ -20,7 +20,8 @@
           <span>{{product.cost}} ₽ - {{product.weight}} г</span>
         </div>
         <div class="product__info--actions">
-          <button>Добавить в коризну</button>
+          <button v-if="count === 0" @click="toCard">Добавить в коризну</button>
+          <plus-minus v-else :id="productId"/>
         </div>
       </div>
     </div>
@@ -28,18 +29,31 @@
 </template>
 
 <script>
+import PlusMinus from "@/components/ui/buttons/PlusMinus";
+
 export default {
   name: 'product',
+  components: { PlusMinus },
   computed: {
     productId() {
       return this.$route.params.productId
     },
     product() {
       return this.$store.state.products.list.find(product => product._id === this.productId)
+    },
+    count () {
+      if(this.$store.state.cart.list.find(item => item._id === this.productId))
+        return this.$store.state.cart.list.find(item => item._id === this.productId).count
+      else return 0
     }
   },
   mounted() {
     scroll(0, 0)
+  },
+  methods: {
+    toCard: function () {
+      this.$store.commit('pushProductToCart', this.productId)
+    }
   }
 }
 </script>
@@ -228,13 +242,12 @@ export default {
     }
 
     &--actions {
+      padding-top: 24px;
 
       > button {
         display: flex;
         justify-content: center;
         align-items: center;
-
-        margin-top: 24px;
 
         width: 218px;
         height: 47px;
@@ -269,3 +282,16 @@ export default {
 }
 </style>
 
+<style lang="scss">
+.product__info--actions {
+
+  .plus-minus {
+
+    .plus-minus__circle {
+      background-color: rgba(12, 51, 74, 0.25) !important;
+    }
+
+  }
+
+}
+</style>
