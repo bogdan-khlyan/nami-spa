@@ -3,7 +3,7 @@
     <div class="product__content">
       <div class="product__images">
         <!-- TODO -->
-        <img :src="'https://namisushi.ru' + data.images[0]" alt="">
+        <img :src="'https://namisushi.dn.ua' + data.images[0]" alt="">
       </div>
       <div class="product__info">
         <div>

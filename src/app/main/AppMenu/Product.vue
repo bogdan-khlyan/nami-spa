@@ -1,5 +1,7 @@
 <template>
-  <div class="product" :class="count > 0 ? 'product_active' : ''">
+  <div class="product"
+       :class="count > 0 ? 'product_active' : ''"
+       @click="$router.push(`/${data._id}`)">
     <like v-if="false" class="product__like" />
     <div v-if="false" class="product__icons">
       <div v-for="item in data.tags" :key="item.text + Math.random()" class="product__icons--item">
@@ -7,7 +9,7 @@
       </div>
     </div>
     <div class="product__slider">
-      <img :src="'https://namisushi.ru' + data.images[0]" alt="">
+      <img :src="'https://namisushi.dn.ua' + data.images[0]" alt="">
 <!--      <el-carousel :autoplay="false" arrow="never">-->
 <!--        <el-carousel-item class="product__slider&#45;&#45;item" v-for="image in data.images" :key="image + Math.random()">-->
 <!--          <img :src="'https://namisushi.ru' + image" alt="">-->
@@ -15,10 +17,10 @@
 <!--      </el-carousel>-->
     </div>
     <div class="product__content">
-      <router-link :to="`/${data._id}`" class="product__content--name">
+      <a class="product__content--name">
         <span>{{ data.title }}</span>
         <i>{{ data.weight }}г</i>
-      </router-link>
+      </a>
       <div class="product__content--info">
         <perfect-scrollbar style="height: 74px" :options="{ wheelPropagation: false }" ref="scroll">
           <span class="description">{{ data.description }}</span>
@@ -93,6 +95,7 @@ export default {
     padding: 20px 30px 30px 30px;
 
     transition: 0.3s;
+    cursor: pointer;
 
     @media screen and (max-width: 800px) {
       width: 40vw;
