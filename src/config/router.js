@@ -8,6 +8,7 @@ import Contacts from '@/app/contacts/Contacts'
 import Stocks from '@/app/stocks/Stocks'
 import SuccessfulOrder from '@/app/successfulOrder/SuccessfulOrder'
 import Product from '@/app/product/Product'
+import store from "@/config/store";
 
 Vue.use(VueRouter)
 
@@ -57,8 +58,9 @@ export default router
 router.beforeEach(async (to, from, next) => {
     if (from.name === 'product' && from.params.productId && to.name === 'main') {
         await next()
+        const product = store.state.products.list.find(item => item._id === from.params.productId)
         await router.push({
-            query: { scrollTo: from.params.productId }
+            query: { scrollTo: from.params.productId, categoryId: product.categoryId }
         })
         return
     } else {

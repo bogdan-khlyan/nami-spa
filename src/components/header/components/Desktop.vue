@@ -89,9 +89,13 @@ export default {
     },
     clickMenu: function () {
       if (this.$route.name !== 'main') {
-        this.$router.push('/')
-        setTimeout(() =>
-            this.$scrollTo('#menu', 0, { offset: -70 }), 300)
+        if (this.$route.name === 'product') {
+          this.$router.push('/')
+        } else {
+          this.$router.push('/')
+          setTimeout(() =>
+              this.$scrollTo('#menu', 0, { offset: -70 }), 300)
+        }
       } else this.$scrollTo('#menu', 500, { offset: -70 })
     }
   },

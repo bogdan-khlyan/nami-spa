@@ -2,7 +2,7 @@
   <div v-if="product" class="product">
     <div class="product__content">
       <div class="product__media">
-        <h1>РОЛЛ КИ-ДО</h1>
+        <h1>{{product.title}}</h1>
         <div class="product__media--image">
           <img class="image" :src="'https://namisushi.dn.ua' + product.images[0]" alt="">
           <img class="bg" src="@/app/product/bg.png" alt="">

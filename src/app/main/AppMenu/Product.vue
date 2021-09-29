@@ -54,9 +54,6 @@ export default {
     data: { type: Object }
   },
   computed: {
-    scrollTo() {
-      return this.$route.query.scrollTo
-    },
     styles() {
       if (this.data.title.length > 14) {
         return 'font-size: 16px;line-height: 18px;'
@@ -77,23 +74,7 @@ export default {
       else return 0
     }
   },
-  watch: {
-    scrollTo() {
-      this.init()
-    }
-  },
-  mounted() {
-    this.init()
-  },
   methods: {
-    init: function () {
-      if (this.scrollTo === this.data._id) {
-        this.$nextTick(() => {
-          this.$scrollTo(`#product-card-${this.data._id}`, 300, { offset: -100 })
-          this.$router.push({ query: null })
-        })
-      }
-    },
     toCard: function () {
       this.$store.commit('pushProductToCart', this.data._id)
     },

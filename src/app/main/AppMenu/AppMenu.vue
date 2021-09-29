@@ -18,7 +18,12 @@ export default {
   name: 'app-menu',
   components: { ProductList },
   computed: {
-    categories () { return this.$store.state.category.list },
+    categories () {
+      return this.$store.state.category.list
+    },
+    scrollTo() {
+      return this.$route.query.scrollTo
+    },
   },
   watch: {
     categories: {
@@ -38,9 +43,16 @@ export default {
     }
   },
   mounted() {
-    if(this.categories.length !== 0 && this.activeTab === '0') {
+    if (this.categories.length !== 0 && this.activeTab === '0') {
       this.activeTab = this.categories[0]._id
       this.loading = false
+    }
+    if (this.scrollTo) {
+      this.activeTab = this.$route.query.categoryId
+      this.$nextTick(() => {
+        this.$scrollTo(`#product-card-${this.scrollTo}`, 300, { offset: -100 })
+        this.$router.push({ query: null })
+      })
     }
   }
 }
