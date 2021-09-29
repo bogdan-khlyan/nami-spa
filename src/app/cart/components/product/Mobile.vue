@@ -2,8 +2,7 @@
   <div class="product">
     <div class="product__content">
       <div class="product__images">
-        <!-- TODO -->
-        <img :src="'https://namisushi.dn.ua' + data.images[0]" alt="">
+        <img :src="host + data.images[0]" alt="">
       </div>
       <div class="product__info">
         <div>
@@ -36,6 +35,11 @@ export default {
   components: { PlusMinus },
   props: {
     data: { type: Object }
+  },
+  computed: {
+    host() {
+      return this.$store.state.host
+    }
   },
   data () {
     return {

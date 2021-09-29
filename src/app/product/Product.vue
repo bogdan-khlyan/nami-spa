@@ -4,7 +4,7 @@
       <div class="product__media">
         <h1>{{product.title}}</h1>
         <div class="product__media--image">
-          <img class="image" :src="'https://namisushi.dn.ua' + product.images[0]" alt="">
+          <img class="image" :src="host + product.images[0]" alt="">
           <img class="bg" src="@/app/product/bg.png" alt="">
         </div>
       </div>
@@ -35,6 +35,9 @@ export default {
   name: 'product',
   components: { PlusMinus },
   computed: {
+    host() {
+      return this.$store.state.host
+    },
     productId() {
       return this.$route.params.productId
     },

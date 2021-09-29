@@ -1,8 +1,7 @@
 <template>
   <div class="cart-product">
     <div class="cart-product__img">
-      <!-- TODO -->
-      <img :src="'https://namisushi.dn.ua' + data.images[0]" alt="">
+      <img :src="host + data.images[0]" alt="">
     </div>
     <div class="cart-product__info">
       <div class="cart-product__info--line">
@@ -44,6 +43,11 @@ export default {
   },
   components: {
     PlusMinusBtn: PlusMinus
+  },
+  computed: {
+    host() {
+      return this.$store.state.host
+    }
   },
   data () {
     return {

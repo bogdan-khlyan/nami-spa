@@ -9,6 +9,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
+        host: process.env.VUE_APP_BACKEND_HOST,
         isMenu: false,
         isShowCart: false,
         isShowLoginModal: false,
