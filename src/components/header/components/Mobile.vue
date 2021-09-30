@@ -4,7 +4,9 @@
       <svg width="30" height="20" viewBox="0 0 30 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="18" width="30" height="2" fill="#083E60"/><rect y="9" width="30" height="2" fill="#083E60"/><rect width="30" height="2" fill="#083E60"/></svg>
     </div>
     <div class="logo">
-      <img v-if="windowWidth > 420" :src="show ? '/images/logo-for-dark.png' : '/images/logo-horiz.png'" alt="">
+      <img v-if="windowWidth > 420"
+           :src="show ? require('@/assets/images/logo/logo-for-dark.png') : require('@/assets/images/logo/logo-horiz.png')"
+           alt="">
     </div>
     <div v-if="windowWidth > 600" class="phone">
       <a href="tel:+380717009791">

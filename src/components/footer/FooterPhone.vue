@@ -1,6 +1,6 @@
 <template>
   <div class="app-footer__phone">
-    <img src="@/assets/images/phone.svg" alt="">
+    <img src="@/assets/images/icons/phone.svg" alt="">
     <a href="tel:+380717009791">+38 071-700-91-97</a>
   </div>
 </template>

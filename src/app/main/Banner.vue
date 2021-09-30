@@ -3,14 +3,14 @@
     <div class="banner__content">
       <div v-if="windowWidth > 1250" class="banner__btns">
         <div>
-          <drop-btn icon="/images/icons/phone-black.svg" width="200">
+          <drop-btn :icon="require('@/assets/images/icons/phone-black.svg')" width="200">
             <div><a href="tel:+380717009791">+38 071 700 97 91</a></div>
             <div><a href="tel:+380717009791">+38 071 700 97 91</a></div>
           </drop-btn>
-          <drop-btn icon="/images/icons/point.svg" style="margin-top: 25px" width="245">
+          <drop-btn :icon="require('@/assets/images/icons/point.svg')" style="margin-top: 25px" width="245">
             <div>г. Донецк,</div><div>ул. Университетская, 33</div>
           </drop-btn>
-          <drop-btn icon="/images/icons/clock.svg" style="margin-top: 25px" width="265">
+          <drop-btn :icon="require('@/assets/images/icons/clock.svg')" style="margin-top: 25px" width="265">
             <div>Ежедневно с 10:00 до 21:00</div><div>Доставка с 11:00 до 20:30</div>
           </drop-btn>
         </div>
@@ -18,15 +18,14 @@
       <div class="banner__logo">
         <div>
           <h1>японский <br> ресторан</h1>
-          <img v-if="windowWidth > 600" src="@/assets/images/namisushi.png" alt="">
-          <img v-else src="@/assets/images/logo-banner-mobile.svg" alt="">
+          <img v-if="windowWidth > 600" src="@/assets/images/main/banner/namisushi.png" alt="">
+          <img v-else src="@/assets/images/logo/logo-banner-mobile.svg" alt="">
         </div>
       </div>
       <div class="banner__image">
         <div style="margin-top: 100px">
           <h2>японская еда</h2>
-<!--          <h3>роллы</h3>-->
-          <img src="@/assets/images/banner-image.png" alt="">
+          <img src="@/assets/images/main/banner/banner-image.png" alt="">
         </div>
       </div>
     </div>
@@ -86,7 +85,7 @@ $pt: 120px;
 $dfh: calc(100vh - 240px);
 
 .banner {
-  background: url(/images/banner-bg.png);
+  background: url(../../assets/images/main/banner/banner-bg.png);
   background-size: 100% 100%;
   padding-left: 30px;
   padding-right: 30px;

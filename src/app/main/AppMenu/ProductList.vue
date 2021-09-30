@@ -1,6 +1,6 @@
 <template>
   <div class="product-list">
-    <product v-for="product in products" :key="product._id"
+    <product-card v-for="product in products" :key="product._id"
              :id="`product-card-${product._id}`"
              :data="product"/>
     <div v-if="products.length === 0" class="product-list__empty">
@@ -10,11 +10,11 @@
 </template>
 
 <script>
-import Product from '@/app/main/AppMenu/Product'
+import ProductCard from '@/app/main/AppMenu/ProductCard'
 
 export default {
   name: 'product-list',
-  components: { Product },
+  components: { ProductCard },
   props: {
     categoryId: { type: String }
   },

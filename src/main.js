@@ -15,6 +15,10 @@ import PerfectScrollbar from 'vue2-perfect-scrollbar'
 import 'vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css'
 import VueMask from 'v-mask'
 
+import BaseSvg from "@/components/BaseSvg";
+
+Vue.component('base-svg', BaseSvg)
+
 Vue.use(VueMask);
 
 import { VueMaskDirective } from 'v-mask'

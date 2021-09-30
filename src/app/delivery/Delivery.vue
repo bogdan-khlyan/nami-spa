@@ -6,7 +6,7 @@
         <div class="delivery__list">
           <h2>
             <div class="img-wrapper">
-              <img src="@/assets/images/icons/bag.svg" alt="">
+              <base-svg :src="require('@/assets/images/icons/bag.svg')"/>
             </div>
             <span>как получить заказ</span>
           </h2>
@@ -26,11 +26,6 @@
 <script>
 export default {
   name: 'delivery',
-  components: { },
-  data() {
-    return {
-    }
-  },
   mounted() { scroll(0, 0) }
 }
 </script>
