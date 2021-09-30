@@ -9,11 +9,11 @@
            alt="">
     </div>
     <div v-if="windowWidth > 600" class="phone">
-      <a href="tel:+380717009791">
+      <a :href="`tel:${$config.phoneNumber.replaceAll(' ', '')}`">
         <div class="circle">
           <img src="@/assets/images/icons/phone-black.svg" alt="">
         </div>
-        <span>+38 071 700 97 91</span>
+        <span>{{ $config.phoneNumber }}</span>
       </a>
     </div>
     <div class="cart">

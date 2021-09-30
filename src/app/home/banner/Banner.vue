@@ -22,14 +22,14 @@
       <btn-to-menu v-scroll-to="{ el: '#menu', offset: -70 }" />
       <a v-if="windowWidth > 768"
          class="banner__bottom--social"
-         href="https://vk.com/namisushidn"
+         :href="$config.socials.vk"
          target="_blank"
          style="margin-left: auto;margin-right: 20px">
         <img src="@/assets/images/icons/vk.svg" alt="">
       </a>
       <a v-if="windowWidth > 768"
          class="banner__bottom--social"
-         href="https://instagram.com/namisushidn"
+         :href="$config.socials.ig"
          target="_blank">
         <img src="@/assets/images/icons/ig.svg" alt="">
       </a>

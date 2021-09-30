@@ -32,29 +32,15 @@ Vue.use(ElementsUI, Loading, Notification, MessageBox)
 axios.defaults.baseURL = process.env.VUE_APP_BACKEND_HOST
 axios.defaults.headers.common['Content-Type'] = 'application/json'
 axios.interceptors.request.use( function (config) {
-  /*
-  if (store.state.user.loggedIn) {
-    const token = store.state.user.jwt;
-    config.headers.common['Authorization'] = `Bearer ${token}`;
-    // config.headers.authorization = localStorage.getItem("token");
-  }
-
-   */
   return config;
 });
 axios.interceptors.response.use(undefined, (error) => {
-  /*
-  if (error.response.status === 401) {
-    store.dispatch('logOut');
-  }
-  if (error.response.status === 403) {
-    router.push('/spa/not-auth');
-  }
-
-   */
   return Promise.reject(error)
 })
 Vue.prototype.$http = axios
+
+import {config} from "@/config/config";
+Vue.prototype.$config = config
 
 
 Vue.config.productionTip = false

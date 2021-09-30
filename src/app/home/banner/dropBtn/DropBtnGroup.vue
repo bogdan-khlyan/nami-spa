@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="drop-btn-group">
     <drop-btn
         v-for="(item, i) in items" :key="i"
         :options="item"/>
