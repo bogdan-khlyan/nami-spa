@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import ProductList from '@/app/main/AppMenu/ProductList'
+import ProductList from '@/app/home/menu/ProductList'
 
 export default {
   name: 'app-menu',

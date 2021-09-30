@@ -2,18 +2,7 @@
   <div id="banner" class="banner" ref="banner">
     <div class="banner__content">
       <div v-if="windowWidth > 1250" class="banner__btns">
-        <div>
-          <drop-btn :icon="require('@/assets/images/icons/phone-black.svg')" width="200">
-            <div><a href="tel:+380717009791">+38 071 700 97 91</a></div>
-            <div><a href="tel:+380717009791">+38 071 700 97 91</a></div>
-          </drop-btn>
-          <drop-btn :icon="require('@/assets/images/icons/point.svg')" style="margin-top: 25px" width="245">
-            <div>г. Донецк,</div><div>ул. Университетская, 33</div>
-          </drop-btn>
-          <drop-btn :icon="require('@/assets/images/icons/clock.svg')" style="margin-top: 25px" width="265">
-            <div>Ежедневно с 10:00 до 21:00</div><div>Доставка с 11:00 до 20:30</div>
-          </drop-btn>
-        </div>
+        <drop-btn-group/>
       </div>
       <div class="banner__logo">
         <div>
@@ -49,12 +38,12 @@
 </template>
 
 <script>
-import DropBtn from '@/app/main/ui/DropBtn'
 import BtnToMenu from '@/components/utils/BtnToMenu'
+import DropBtnGroup from "@/app/home/banner/dropBtn/DropBtnGroup";
 
 export default {
   name: 'banner',
-  components: { DropBtn, BtnToMenu },
+  components: { BtnToMenu, DropBtnGroup },
   computed: {
     isMenu () { return this.$store.state.isMenu },
     windowScroll () { return this.$store.state.windowScroll },
@@ -85,7 +74,7 @@ $pt: 120px;
 $dfh: calc(100vh - 240px);
 
 .banner {
-  background: url(../../assets/images/main/banner/banner-bg.png);
+  background: url(../../../assets/images/main/banner/banner-bg.png);
   background-size: 100% 100%;
   padding-left: 30px;
   padding-right: 30px;

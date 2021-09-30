@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import NotFound from '@/app/NotFound'
-import Main from '@/app/main/AppMain'
+import Home from '@/app/home/Home'
 import Delivery from '@/app/delivery/Delivery'
 import MainWrapper from '@/components/MainWrapper'
 import Contacts from '@/app/contacts/Contacts'
@@ -23,7 +23,7 @@ const router = new VueRouter({
             children: [{
                 path: '/',
                 name: 'main',
-                component: Main
+                component: Home
             }, {
                 path: '/delivery',
                 name: 'delivery',

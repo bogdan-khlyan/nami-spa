@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import ProductCard from '@/app/main/AppMenu/ProductCard'
+import ProductCard from '@/app/home/menu/ProductCard'
 
 export default {
   name: 'product-list',

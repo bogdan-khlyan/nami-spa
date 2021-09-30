@@ -1,13 +1,13 @@
 <template>
-  <div class="main">
+  <div class="home">
     <banner/>
     <app-menu id="menu"/>
   </div>
 </template>
 
 <script>
-import Banner from '@/app/main/Banner'
-import AppMenu from '@/app/main/AppMenu/AppMenu'
+import Banner from '@/app/home/banner/Banner'
+import AppMenu from '@/app/home/menu/AppMenu'
 
 export default {
   name: 'app-main',
@@ -16,6 +16,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.main { width: 100vw; }
+.home { width: 100vw; }
 </style>
 
