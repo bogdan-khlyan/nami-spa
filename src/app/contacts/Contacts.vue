@@ -3,7 +3,7 @@
     <div class="default-page">
       <h1>контакты</h1>
       <div class="default-page__content">
-        <temp/>
+        <info/>
         <widgets/>
       </div>
     </div>
@@ -11,19 +11,17 @@
 </template>
 
 <script>
-import Temp from '@/app/contacts/components/Temp'
+import Info from '@/app/contacts/components/Info'
 import Widgets from '@/app/contacts/components/Widgets'
 
 export default {
   name: 'delivery',
-  components: { Temp, Widgets },
+  components: { Info, Widgets },
   data() {
     return { }
   },
   mounted() {
     scroll(0, 0)
-  },
-  methods: {
   }
 }
 </script>

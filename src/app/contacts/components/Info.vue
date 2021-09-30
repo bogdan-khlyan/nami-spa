@@ -37,7 +37,7 @@
 
 <script>
 export default {
-  name: 'temp', // TODO
+  name: 'info',
   mounted() { scroll(0, 0) }
 }
 </script>
