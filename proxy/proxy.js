@@ -5,6 +5,7 @@ const app = express()
 
 app.use('/ws', createProxyMiddleware({target: 'https://namisushi.dn.ua', changeOrigin: true, ws: true}))
 app.use('/api', createProxyMiddleware({target: 'https://namisushi.dn.ua', changeOrigin: true}))
+app.use('/image', createProxyMiddleware({target: 'https://namisushi.dn.ua', changeOrigin: true}))
 app.use('/', createProxyMiddleware({target: 'http://localhost:8080', changeOrigin: true}))
 
 
