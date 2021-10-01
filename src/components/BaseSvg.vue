@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'svg',
+  name: 'base-svg',
   props: {
     src: String
   },
