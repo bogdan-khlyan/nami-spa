@@ -1,7 +1,7 @@
 <template>
   <div class="product"
        :class="count > 0 ? 'product_active' : ''"
-       @click="$router.push(`/${data._id}`)">
+       @click="$router.push(`/product/${data._id}`)">
     <like v-if="false" class="product__like"/>
     <div v-if="false" class="product__icons">
       <div v-for="item in data.tags" :key="item.text + Math.random()" class="product__icons--item">

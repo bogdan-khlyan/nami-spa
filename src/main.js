@@ -17,6 +17,13 @@ import VueMask from 'v-mask'
 
 import BaseSvg from "@/components/BaseSvg";
 
+if (process.env.NODE_ENV === 'development') { // отключаем индексирование для env dev
+  const meta = document.createElement('meta')
+  meta.setAttribute('name', 'robots')
+  meta.setAttribute('content', 'noindex')
+  document.head.appendChild(meta)
+}
+
 Vue.component('base-svg', BaseSvg)
 
 Vue.use(VueMask);

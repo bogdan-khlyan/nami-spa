@@ -9,6 +9,7 @@ import Stocks from '@/app/stocks/Stocks'
 import SuccessfulOrder from '@/app/successfulOrder/SuccessfulOrder'
 import Product from '@/app/product/Product'
 import store from "@/config/store";
+import Page404 from "@/components/Page404";
 
 Vue.use(VueRouter)
 
@@ -45,9 +46,13 @@ const router = new VueRouter({
                 name: 'successful-order',
                 component: SuccessfulOrder
             }, {
-                path: '/:productId',
+                path: '/product/:productId',
                 name: 'product',
                 component: Product
+            }, {
+                path: '*',
+                name: 'page-404',
+                component: Page404
             }]
         }
     ]
