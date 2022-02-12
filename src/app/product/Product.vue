@@ -47,11 +47,11 @@ export default {
         meta: [{
           vmid: 'description',
           name: 'description',
-          content: `NamiSushi - ${this.product.description}`,
+          content: `NamiSushi - ${this.product.description}`
         }, {
           vmid: 'keywords',
           name: 'keywords',
-          content: 'доставка еды, доставка еды донецк, доставка суши, суши донецк, доставка роллов, роллы донецк, японская еда',
+          content: this.product.ingredients.join(', ')
         }]
       }
     },
