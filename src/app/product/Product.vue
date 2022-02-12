@@ -39,6 +39,9 @@ export default {
   },
   computed: {
     metaInfo() {
+      if (!this.product) {
+        return null
+      }
       return {
         title: `NamiSushi | ${this.product.title}`,
         meta: [{
