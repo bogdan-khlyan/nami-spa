@@ -34,7 +34,24 @@ import PlusMinus from "@/components/ui/buttons/PlusMinus";
 export default {
   name: 'product',
   components: { PlusMinus },
+  metaInfo() {
+    return this.metaInfo
+  },
   computed: {
+    metaInfo() {
+      return {
+        title: `NamiSushi | ${this.product.title}`,
+        meta: [{
+          vmid: 'description',
+          name: 'description',
+          content: `NamiSushi - ${this.product.description}`,
+        }, {
+          vmid: 'keywords',
+          name: 'keywords',
+          content: 'доставка еды, доставка еды донецк, доставка суши, суши донецк, доставка роллов, роллы донецк, японская еда',
+        }]
+      }
+    },
     host() {
       return this.$store.state.host
     },
