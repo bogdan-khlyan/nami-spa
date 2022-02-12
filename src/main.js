@@ -16,6 +16,12 @@ import 'vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css'
 import VueMask from 'v-mask'
 
 import BaseSvg from "@/components/BaseSvg";
+import VueMeta from 'vue-meta'
+
+Vue.use(VueMeta, {
+  // optional pluginOptions
+  refreshOnceOnNavigation: true
+})
 
 if (process.env.NODE_ENV === 'development') { // отключаем индексирование для env dev
   const meta = document.createElement('meta')

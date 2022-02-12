@@ -17,8 +17,17 @@ import Widgets from '@/app/contacts/components/Widgets'
 export default {
   name: 'delivery',
   components: { Info, Widgets },
-  data() {
-    return { }
+  metaInfo: {
+    title: 'Контакты',
+    meta: [{
+      vmid: 'description',
+      name: 'description',
+      content: 'NamiSushi - контакты',
+    }, {
+      vmid: 'keywords',
+      name: 'keywords',
+      content: 'акции, скидки, подарки, скидка на самовывоз, акция выходного дня, скидка на самовывоз, скидка имениннику',
+    }]
   },
   mounted() {
     scroll(0, 0)

@@ -43,6 +43,18 @@ import Stock from '@/app/stocks/components/Stock'
 export default {
   name: 'delivery',
   components: { Stock },
+  metaInfo: {
+    title: 'Акции',
+    meta: [{
+      vmid: 'description',
+      name: 'description',
+      content: 'NamiSushi - акции, скидки и подарки',
+    }, {
+      vmid: 'keywords',
+      name: 'keywords',
+      content: 'акции, скидки, подарки, скидка на самовывоз, акция выходного дня, скидка на самовывоз, скидка имениннику',
+    }]
+  },
   data() {
     return { }
   },

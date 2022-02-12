@@ -26,6 +26,18 @@
 <script>
 export default {
   name: 'delivery',
+  metaInfo: {
+    title: 'Условия доставки',
+    meta: [{
+      vmid: 'description',
+      name: 'description',
+      content: 'NamiSushi - доставка японской еды в Донецке и Макеевке. Доставка еды - суши, роллов и другой вкусной еды.',
+    }, {
+      vmid: 'keywords',
+      name: 'keywords',
+      content: 'доставка еды, доставка еды донецк, доставка суши, суши донецк, доставка роллов, роллы донецк, японская еда',
+    }]
+  },
   mounted() { scroll(0, 0) }
 }
 </script>
