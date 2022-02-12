@@ -17,10 +17,18 @@ import VueMask from 'v-mask'
 
 import BaseSvg from "@/components/BaseSvg";
 import VueMeta from 'vue-meta'
+import VueYandexMetrika from 'vue-yandex-metrika'
 
 Vue.use(VueMeta, {
   // optional pluginOptions
   refreshOnceOnNavigation: true
+})
+
+Vue.use(VueYandexMetrika, {
+  id: 87489103,
+  router: router,
+  env: process.env.NODE_ENV
+  // other options
 })
 
 if (process.env.NODE_ENV === 'development') { // отключаем индексирование для env dev
