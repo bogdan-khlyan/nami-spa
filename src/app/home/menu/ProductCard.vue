@@ -76,6 +76,7 @@ export default {
   },
   methods: {
     toCard: function () {
+      this.$metrika.reachGoal('add-product-to-card')
       this.$store.commit('pushProductToCart', this.data._id)
     },
     stopPropagation: function ($event) {
