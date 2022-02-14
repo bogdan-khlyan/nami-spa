@@ -44,7 +44,7 @@ export default {
   name: 'delivery',
   components: { Stock },
   metaInfo: {
-    title: 'Акции',
+    title: 'NamiSushi | Акции',
     meta: [{
       vmid: 'description',
       name: 'description',

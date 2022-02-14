@@ -18,16 +18,16 @@ export default {
   name: 'delivery',
   components: { Info, Widgets },
   metaInfo: {
-    title: 'Контакты',
+    title: 'NamiSushi | Контакты',
     meta: [{
       vmid: 'description',
       name: 'description',
-      content: 'NamiSushi - контакты',
-    }, {
+      content: 'NamiSushi - +38(071)700-97-91 г.Донецк,ул.Университетская,33',
+    }/*, {
       vmid: 'keywords',
       name: 'keywords',
       content: 'акции, скидки, подарки, скидка на самовывоз, акция выходного дня, скидка на самовывоз, скидка имениннику',
-    }]
+    }*/]
   },
   mounted() {
     scroll(0, 0)
