@@ -301,7 +301,7 @@ export default {
 
     &--info {
       margin-top: 10px;
-      padding-bottom: 50px;
+      padding-bottom: 65px;
 
       min-height: 60px;
       overflow: hidden;
