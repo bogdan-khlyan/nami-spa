@@ -303,7 +303,7 @@ export default {
       margin-top: 10px;
       padding-bottom: 65px;
 
-      min-height: 60px;
+      min-height: 50px;
       overflow: hidden;
 
       text-align: left;
