@@ -23,17 +23,17 @@
       </a>
       <div class="product__content--info">
         <div>
-          <span class="description">{{ description }}</span>
+          <span class="description">{{ data.ingredients.join(', ') }}</span>
         </div>
       </div>
-      <div class="product__content--footer">
-        <div class="price">
-          <span>{{ data.cost }}₽</span>
-        </div>
-        <div @click="stopPropagation" class="btn">
-          <button v-if="count < 1" @click="toCard" class="product__btn-to-cart">В корзину</button>
-          <plus-minus class="plus-minus-btn" v-else :id="data._id"/>
-        </div>
+    </div>
+    <div class="product__footer">
+      <div class="price">
+        <span>{{ data.cost }}₽</span>
+      </div>
+      <div @click="stopPropagation" class="btn">
+        <button v-if="count < 1" @click="toCard" class="product__btn-to-cart">В корзину</button>
+        <plus-minus class="plus-minus-btn" v-else :id="data._id"/>
       </div>
     </div>
   </div>
@@ -105,7 +105,6 @@ export default {
 .product {
   position: relative;
   width: 270px;
-  height: 390px;
 
   margin: 20px 20px 40px 20px;
   border-radius: 8px;
@@ -239,7 +238,6 @@ export default {
 
   &__content {
     position: relative;
-    height: 170px;
 
     @media screen and (max-width: 700px) {
       margin-top: 20px;
@@ -303,10 +301,13 @@ export default {
 
     &--info {
       margin-top: 10px;
-      text-align: left;
-      height: 74px;
-      text-overflow: ellipsis;
+      padding-bottom: 50px;
+
+      min-height: 60px;
       overflow: hidden;
+
+      text-align: left;
+      text-overflow: ellipsis;
 
       @media screen and (max-width: 700px) {
         margin-top: 20px;
@@ -334,46 +335,48 @@ export default {
       }
     }
 
-    &--footer {
-      position: absolute;
-      bottom: 0;
-      width: 210px;
-      display: flex;
-      padding-top: 20px;
+  }
 
-      .plus-minus-btn {
-        height: 35px;
-      }
+  &__footer {
+    padding-top: 20px;
 
-      @media screen and (max-width: 800px) {
-        width: 32vw;
-        min-width: 32vw;
-        max-width: 32px;
-      }
-      @media screen and (max-width: 700px) {
-        width: 52vw;
-        min-width: 52vw;
-        max-width: 52px;
-      }
-      @media screen and (max-width: 540px) {
-        width: 63vw;
-        min-width: 63vw;
-        max-width: 63px;
-      }
+    position: absolute;
+    bottom: 30px;
 
-      > .price {
-        margin-right: auto;
-        font-family: Neucha, sans-serif;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 27px;
-        line-height: 30px;
+    display: flex;
+    width: 210px;
 
-        color: #000000;
+    .plus-minus-btn {
+      height: 35px;
+    }
 
-        transition: 0.3s;
-      }
+    @media screen and (max-width: 800px) {
+      width: 32vw;
+      min-width: 32vw;
+      max-width: 32px;
+    }
+    @media screen and (max-width: 700px) {
+      width: 52vw;
+      min-width: 52vw;
+      max-width: 52px;
+    }
+    @media screen and (max-width: 540px) {
+      width: 63vw;
+      min-width: 63vw;
+      max-width: 63px;
+    }
 
+    > .price {
+      margin-right: auto;
+      font-family: Neucha, sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 27px;
+      line-height: 30px;
+
+      color: #000000;
+
+      transition: 0.3s;
     }
 
   }
