@@ -1,15 +1,13 @@
 <template>
   <div class="banner-bottom">
     <btn-to-menu v-scroll-to="{ el: '#menu', offset: -70 }" />
-    <a v-if="windowWidth > 768"
-       class="banner-bottom--social"
+    <a class="banner-bottom--social"
        :href="$config.socials.vk"
        target="_blank"
        style="margin-left: auto;margin-right: 20px">
       <img src="@/assets/images/icons/vk.svg" alt="">
     </a>
-    <a v-if="windowWidth > 768"
-       class="banner-bottom--social"
+    <a class="banner-bottom--social"
        :href="$config.socials.ig"
        target="_blank">
       <img src="@/assets/images/icons/ig.svg" alt="">
@@ -42,13 +40,7 @@ export default {
   align-items: center;
 
   @media screen and (max-width: 600px) {
-    justify-content: center;
-  }
-  @media screen and (max-width: 600px) {
-    padding-top: 25px;
-  }
-  @media screen and (max-width: 500px) {
-    padding-top: 16px;
+    height: 100px;
   }
 
   &--social {
@@ -57,6 +49,7 @@ export default {
     align-items: center;
 
     width: 45px;
+    min-width: 45px;
     height: 45px;
 
     border-radius: 50%;

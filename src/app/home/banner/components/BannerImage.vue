@@ -14,6 +14,9 @@ export default {
 <style scoped lang="scss">
 .banner-image {
   margin-top: 100px;
+  @media screen and (max-width: 770px) {
+    margin-top: 0;
+  }
 
   h2 {
     margin-bottom: 0;
@@ -30,9 +33,6 @@ export default {
 
     @media screen and (max-width: 1060px) {
       font-size: 36px;
-    }
-    @media screen and (max-width: 768px) {
-      display: none;
     }
 
   }
@@ -119,7 +119,7 @@ export default {
       object-fit: contain;
     }
     @media screen and (max-width: 1100px) {
-      margin-top: 30px;
+      //margin-top: 30px;
       width: 500px;
       object-fit: contain;
     }
@@ -127,27 +127,46 @@ export default {
       width: 450px;
       object-fit: contain;
     }
-    @media screen and (max-width: 820px) {
-      width: 420px;
+    @media screen and (max-width: 840px) {
+      width: 420px!important;
       object-fit: contain;
     }
-    @media screen and (max-width: 768px) {
-      margin-top: -40px;
-      margin-left: 180px;
-      width: 90vw;
-      object-fit: contain;
+
+    @media screen and (max-width: 770px) {
+      width: 500px!important;
     }
-    @media screen and (max-width: 650px) {
-      margin-left: 150px;
-    }
-    @media screen and (max-width: 600px) {
-      margin-left: 0;
-      width: 80vw;
+    @media screen and (max-width: 480px) {
+      width: 400px!important;
     }
     @media screen and (max-width: 420px) {
-      margin-top: -30px;
-      margin-left: 0;
-      width: 85vw;
+      width: 360px!important;
+    }
+    @media screen and (max-width: 360px) {
+      width: 340px!important;
+    }
+
+    @media screen and (max-width: 1250px) and (max-height: 820px) {
+      margin-top: -20px;
+      width: 550px;
+      @media screen and (max-width: 980px) {
+        width: 450px;
+      }
+    }
+    @media screen and (max-width: 1000px) and (max-height: 700px) {
+      margin-top: -20px;
+      width: 500px;
+      @media screen and (max-width: 770px) {
+        width: 450px!important;
+      }
+      @media screen and (max-width: 480px) {
+        width: 400px!important;
+      }
+      @media screen and (max-width: 420px) {
+        width: 360px!important;
+      }
+      @media screen and (max-width: 360px) {
+        width: 340px!important;
+      }
     }
   }
 }

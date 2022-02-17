@@ -4,7 +4,7 @@
       <div v-if="windowWidth > 1250" class="banner__btns">
         <drop-btn-group/>
       </div>
-      <div class="banner__logo">
+      <div v-if="windowWidth > 770" class="banner__logo">
         <banner-logo/>
       </div>
       <div class="banner__image">
@@ -18,9 +18,9 @@
 </template>
 
 <script>
-import BannerLogo from "@/app/home/banner/BannerLogo";
-import BannerImage from "@/app/home/banner/BannerImage";
-import BannerBottom from "@/app/home/banner/BannerBottom";
+import BannerLogo from "@/app/home/banner/components/BannerLogo";
+import BannerImage from "@/app/home/banner/components/BannerImage";
+import BannerBottom from "@/app/home/banner/components/BannerBottom";
 import DropBtnGroup from "@/app/home/banner/dropBtn/DropBtnGroup";
 
 export default {
@@ -101,6 +101,12 @@ $dfh: calc(100vh - 240px);
 
     max-width: 1200px;
 
+    @media screen and (max-width: 1250px) and (max-height: 820px) {
+      padding-top: 100px;
+    }
+    @media screen and (max-width: 770px) {
+      justify-content: center;
+    }
     @media screen and (max-width: 768px) {
       flex-wrap: wrap;
     }
@@ -138,6 +144,11 @@ $dfh: calc(100vh - 240px);
       width: 100%;
     }
 
+    @media screen and (max-width: 1250px) and (max-height: 820px) {
+      min-height: calc(768px - 300px);
+      height: calc(100vh - 220px);
+    }
+
   }
 
   &__image {
@@ -163,16 +174,22 @@ $dfh: calc(100vh - 240px);
       max-height: calc(700px - 240px);
       min-height: calc(700px - 240px);
     }
-    @media screen and (max-width: 768px) {
-      justify-content: center;
-      margin-top: 80px;
-      max-height: 60vw;
-      min-height: inherit;
-      height: auto;
-      width: 100%;
+    @media screen and (max-width: 770px) {
+      margin-top: 20px;
     }
-    @media screen and (max-width: 601px) {
-      margin-top: 0;
+    @media screen and (max-width: 480px) {
+      min-height: calc(768px - 400px) !important;
+    }
+    @media screen and (max-width: 420px) {
+      min-height: calc(768px - 440px) !important;
+    }
+
+    @media screen and (max-width: 1250px) and (max-height: 820px) {
+      min-height: calc(768px - 300px);
+      height: calc(100vh - 220px);
+    }
+    @media screen and (max-width: 1250px) and (max-height: 700px) {
+      min-height: calc(768px - 360px);
     }
 
   }
