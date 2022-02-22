@@ -10,10 +10,10 @@
 
 <script>
 import CookiePopup from "@/components/CookiePopup";
-import LoginModal from '@/components/modals/LoginModal'
-import HeaderCollapse from '@/components/header/components/HeaderCollapse'
-import Cart from '@/app/cart/Cart'
-import {productService} from '@/app/product/product.service'
+import LoginModal from "@/components/modals/LoginModal";
+import HeaderCollapse from "@/components/header/components/HeaderCollapse";
+import Cart from "@/app/cart/Cart";
+import {productService} from "@/app/product/product.service";
 
 export default {
   name: 'App',

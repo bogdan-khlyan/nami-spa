@@ -49,8 +49,10 @@ export default {
   },
   methods: {
     send: function () {
-      if (this.cartProducts.length !== 0)
+      if (this.cartProducts.length !== 0) {
+        this.$metrika.reachGoal('making-an-order')
         this.$emit('changeMode', 'ORDER')
+      }
     },
     close: function () { this.$store.commit('hideCart') },
   }

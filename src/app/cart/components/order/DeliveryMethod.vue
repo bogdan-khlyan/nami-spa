@@ -2,7 +2,12 @@
   <div class="delivery-method">
     <chapter-label label="Способ доставки" :number="1" />
     <div class="delivery-method__content">
-      <checkbox :class="{'checkbox-disabled': costAll < 500}" v-model="check" @input="emit" :show="true" :icon="'/images/delivery.svg'" :disabled="costAll < 500" >
+      <checkbox :class="{'checkbox-disabled': costAll < 500}"
+                v-model="check"
+                :show="true"
+                :icon="require('@/assets/images/icons/delivery.svg')"
+                :disabled="costAll < 500"
+                @input="emit">
         <div class="label">Курьер</div>
         <div>
           <span v-if="costAll < 500" class="delivery-disabled">Сумма заказа для доставки курьером должна составлять не менее 500 ₽</span>
@@ -12,7 +17,10 @@
           <span v-else>{{order.deliveryCost}}₽</span>
         </div>
       </checkbox>
-      <checkbox v-model="check" @input="emit" :show="false" :icon="'/images/shopping-bag.svg'" >
+      <checkbox v-model="check"
+                :show="false"
+                :icon="require('@/assets/images/cart/shopping-bag.svg')"
+                @input="emit">
         <div>Самовывоз</div><div class="text-adaptive-small">Скидка - 10%</div>
       </checkbox>
     </div>

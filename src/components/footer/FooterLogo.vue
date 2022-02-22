@@ -2,10 +2,10 @@
   <div class="app-footer__logo">
     <div style="position: relative">
       <router-link to="/">
-        <img v-if="windowWidth > 660" src="@/assets/images/logo-footer.png" alt="">
-        <img v-else src="@/assets/images/logo-circle.png" alt="">
+        <img v-if="windowWidth > 660" src="@/assets/images/logo/logo-footer.png" alt="">
+        <img v-else src="@/assets/images/logo/logo-circle.png" alt="">
       </router-link>
-      <a class="c" href="mailto:es.bogdan.hlyan@gmail.com">made by Bogdan Khlyan, 2021</a>
+      <a v-if="windowWidth > 1100" class="c" href="mailto:es.bogdan.hlyan@gmail.com">made by Bogdan Khlyan, 2021</a>
     </div>
   </div>
 </template>

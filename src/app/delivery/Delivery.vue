@@ -6,7 +6,7 @@
         <div class="delivery__list">
           <h2>
             <div class="img-wrapper">
-              <img src="@/assets/images/icons/bag.svg" alt="">
+              <base-svg :src="require('@/assets/images/icons/bag.svg')"/>
             </div>
             <span>как получить заказ</span>
           </h2>
@@ -26,10 +26,17 @@
 <script>
 export default {
   name: 'delivery',
-  components: { },
-  data() {
-    return {
-    }
+  metaInfo: {
+    title: 'NamiSushi | Условия доставки',
+    meta: [{
+      vmid: 'description',
+      name: 'description',
+      content: 'NamiSushi - Закажи доставку роллов от NAMI Sushi в Донецк и Макеевку!',
+    }, {
+      vmid: 'keywords',
+      name: 'keywords',
+      content: 'доставка еды, доставка еды донецк, доставка суши, суши донецк, доставка роллов, роллы донецк, японская еда',
+    }]
   },
   mounted() { scroll(0, 0) }
 }
