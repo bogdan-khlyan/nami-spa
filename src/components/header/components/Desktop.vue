@@ -3,7 +3,7 @@
     <div class="header__wrapper">
       <nav class="header__nav">
         <div @click="clickLogo" class="header__nav--logo" ref="logo">
-          <img src="@/assets/images/logo.png" alt="" ref="logoImg">
+          <img src="@/assets/images/logo/logo.png" alt="" ref="logoImg">
         </div>
         <div class="header__nav--menu">
           <div @click="clickMenu" class="header__nav--menu--item" :class="{'active': $route.name === 'main' && isMenu}">
@@ -21,14 +21,6 @@
               <span>Акции</span>
             </router-link>
           </div>
-<!--          <div class="header__nav&#45;&#45;menu&#45;&#45;item">-->
-<!--            <el-tooltip class="item" effect="dark" placement="top">-->
-<!--              <div slot="content">Мы ещё не создали страницу акций :(<br>Скоро...</div>-->
-<!--              <a style="cursor: no-drop">-->
-<!--                <span>Акции</span>-->
-<!--              </a>-->
-<!--            </el-tooltip>-->
-<!--          </div>-->
           <div class="header__nav--menu--item">
             <el-tooltip class="item" effect="dark" placement="top">
               <div slot="content">Временно недоступно</div>
@@ -44,7 +36,10 @@
           </div>
         </div>
         <div class="header__nav--phone">
-          <a href="tel:+380717009791" style="text-decoration: none"> <span class="icon"><img src="@/assets/images/icons/phone-black.svg" alt=""></span> <span style="padding-left: 60px">+38 071 700 97 91</span></a>
+          <a :href="`tel:${$config.phoneNumber.replaceAll(' ', '')}`" style="text-decoration: none">
+            <span class="icon"><img src="@/assets/images/icons/phone-black.svg" alt=""></span>
+            <span style="padding-left: 60px">{{ $config.phoneNumber }}</span>
+          </a>
         </div>
         <div class="header__nav--cart">
           <cart-header-button class="btn" />
@@ -63,7 +58,7 @@
 </template>
 
 <script>
-import CartHeaderButton from '@/components/utils/CartHeaderButton'
+import CartHeaderButton from "@/components/utils/CartHeaderButton";
 
 export default {
   name: 'desktop',

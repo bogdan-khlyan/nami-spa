@@ -20,9 +20,9 @@ export default {
   cursor: pointer;
   z-index: 9;
 
-  @media screen and (max-width: 768px) {
-    width: 50px;
-  }
+  //@media screen and (max-width: 768px) {
+  //  width: 50px;
+  //}
 
   > .circle {
     width: 45px;
@@ -55,7 +55,10 @@ export default {
 
     color: #FFFFFF;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 600px) {
+      font-size: 24px;
+    }
+    @media screen and (max-width: 480px) {
       display: none;
     }
 

@@ -2,9 +2,9 @@
   <div class="app-icon">
     <el-tooltip class="item" effect="dark" :content="tooltipText" placement="top">
       <div class="app-icon__content">
-        <img v-if="type === 'new'" src="@/assets/images/icon-new.svg" alt="">
-        <img v-else-if="type === 'vegan'" src="@/assets/images/icon-vegan.svg" alt="">
-        <img v-else-if="type === 'fire'" src="@/assets/images/icon-fire.svg" alt="">
+        <img v-if="type === 'new'" src="@/assets/images/product/icon-new.svg" alt="">
+        <img v-else-if="type === 'vegan'" src="@/assets/images/product/icon-vegan.svg" alt="">
+        <img v-else-if="type === 'fire'" src="@/assets/images/product/icon-fire.svg" alt="">
       </div>
     </el-tooltip>
   </div>
