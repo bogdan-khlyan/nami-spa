@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import NotFound from '@/app/NotFound'
-import Main from '@/app/main/AppMain'
+import Home from '@/app/home/Home'
 import Delivery from '@/app/delivery/Delivery'
 import MainWrapper from '@/components/MainWrapper'
 import Contacts from '@/app/contacts/Contacts'
@@ -9,6 +9,7 @@ import Stocks from '@/app/stocks/Stocks'
 import SuccessfulOrder from '@/app/successfulOrder/SuccessfulOrder'
 import Product from '@/app/product/Product'
 import store from "@/config/store";
+import Page404 from "@/components/Page404";
 
 Vue.use(VueRouter)
 
@@ -23,7 +24,7 @@ const router = new VueRouter({
             children: [{
                 path: '/',
                 name: 'main',
-                component: Main
+                component: Home
             }, {
                 path: '/delivery',
                 name: 'delivery',
@@ -45,9 +46,13 @@ const router = new VueRouter({
                 name: 'successful-order',
                 component: SuccessfulOrder
             }, {
-                path: '/:productId',
+                path: '/product/:productId',
                 name: 'product',
                 component: Product
+            }, {
+                path: '*',
+                name: 'page-404',
+                component: Page404
             }]
         }
     ]

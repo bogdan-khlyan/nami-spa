@@ -1,5 +1,8 @@
 <template>
-  <div class="widgets">
+  <div class="widgets"
+       v-loading="loading"
+       element-loading-spinner="el-icon-loading"
+       element-loading-background="rgb(255, 255, 255)">
     <div class="widgets__vk" v-if="windowWidth > 1000">
       <div id="vk_groups" ref="vkWidget"></div>
     </div>
@@ -10,7 +13,8 @@
           height="300"
           style="border:0;border-radius: 8px"
           allowfullscreen=""
-          loading="lazy"/>
+          loading="lazy"
+          @load="handleLoadFrame"/>
     </div>
   </div>
 </template>
@@ -18,9 +22,9 @@
 <script>
 export default {
   name: 'widgets',
-  components: { },
   data() {
     return {
+      loading: true
     }
   },
   computed: {
@@ -33,6 +37,9 @@ export default {
     if (this.windowWidth !== null) this.renderVkWidget()
   },
   methods: {
+    handleLoadFrame() {
+      setTimeout(() => this.loading = false, 500)
+    },
     r: function (width, height = '300') {
       /*eslint-disable no-undef*/
       this.$refs.vkWidget.innerHTML = ''
@@ -73,6 +80,19 @@ export default {
     @media screen and (max-width: 1000px) {
       padding-left: 0;
     }
+  }
+
+}
+</style>
+
+<style lang="scss">
+.widgets .el-loading-mask {
+  border: 2px solid #F6F6F6;
+  border-radius: 2px;
+
+  i {
+    font-size: 20px;
+    color: #000000;
   }
 
 }
