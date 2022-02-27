@@ -1,7 +1,8 @@
 {
   "name": "namisushi",
   "version": "0.1.0",
-  "author": "es.bogdan.hlyan@gmail.com",
+  "author": "Bogdan Khlyan (Hlyan) es.bogdan.hlyan@gmail.com",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
