@@ -3,7 +3,7 @@
     <div class="default-page">
       <h1>контакты</h1>
       <div class="default-page__content">
-        <temp/>
+        <info/>
         <widgets/>
       </div>
     </div>
@@ -11,19 +11,26 @@
 </template>
 
 <script>
-import Temp from '@/app/contacts/components/Temp'
+import Info from '@/app/contacts/components/Info'
 import Widgets from '@/app/contacts/components/Widgets'
 
 export default {
   name: 'delivery',
-  components: { Temp, Widgets },
-  data() {
-    return { }
+  components: { Info, Widgets },
+  metaInfo: {
+    title: 'NamiSushi | Контакты',
+    meta: [{
+      vmid: 'description',
+      name: 'description',
+      content: 'NamiSushi - +38(071)700-97-91 г.Донецк,ул.Университетская,33',
+    }/*, {
+      vmid: 'keywords',
+      name: 'keywords',
+      content: 'акции, скидки, подарки, скидка на самовывоз, акция выходного дня, скидка на самовывоз, скидка имениннику',
+    }*/]
   },
   mounted() {
     scroll(0, 0)
-  },
-  methods: {
   }
 }
 </script>

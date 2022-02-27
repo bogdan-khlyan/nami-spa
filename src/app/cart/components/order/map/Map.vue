@@ -54,7 +54,7 @@ export default {
               fromEnabled: false,
               from: 'Донецк, Университетская 33',
               toEnabled: false,
-              to: this.address
+              to: 'донецк' + this.address
            })
           // routePanelControl.routePanel.visible = false
 
@@ -73,7 +73,7 @@ export default {
               if (activeRoute) {
                 // Получим протяженность маршрута.
                 let length = route.getActiveRoute().properties.get("distance")
-                if (length.value > 25000) {
+                if (length.value > 100000) {
                   this.error = 'DISTANCE_EXCEEDED'
                   this.loading = false
                   // this.$emit('distanceExceeded')

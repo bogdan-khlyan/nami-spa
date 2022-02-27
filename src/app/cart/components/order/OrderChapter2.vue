@@ -2,7 +2,9 @@
   <div class="order-chapter2">
     <chapter-label label="Способ оплаты" :number="2" />
     <div class="order-chapter2__content">
-      <checkbox v-model="test" :show="true" :icon="'/images/delivery.svg'" >
+      <checkbox v-model="test"
+                :show="true"
+                :icon="require('@/assets/images/icons/delivery.svg')" >
         Оплата наличными при получении
       </checkbox>
     </div>

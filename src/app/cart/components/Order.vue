@@ -61,6 +61,7 @@ export default {
               this.$store.commit('hideCart')
               this.$store.commit('clearCartProducts')
               this.$store.commit('setPhoneNumber', tmp.phone)
+              this.$metrika.reachGoal('create-order')
               this.$nextTick(() => this.$router.push('/successful-order'))
             })
             .finally(() => this.loading = false)

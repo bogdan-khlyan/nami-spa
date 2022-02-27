@@ -15,6 +15,31 @@ import PerfectScrollbar from 'vue2-perfect-scrollbar'
 import 'vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css'
 import VueMask from 'v-mask'
 
+import BaseSvg from "@/components/BaseSvg";
+import VueMeta from 'vue-meta'
+import VueYandexMetrika from 'vue-yandex-metrika'
+
+Vue.use(VueMeta, {
+  // optional pluginOptions
+  refreshOnceOnNavigation: true
+})
+
+Vue.use(VueYandexMetrika, {
+  id: 87489103,
+  router: router,
+  env: process.env.NODE_ENV
+  // other options
+})
+
+if (process.env.NODE_ENV === 'development') { // отключаем индексирование для env dev
+  const meta = document.createElement('meta')
+  meta.setAttribute('name', 'robots')
+  meta.setAttribute('content', 'noindex')
+  document.head.appendChild(meta)
+}
+
+Vue.component('base-svg', BaseSvg)
+
 Vue.use(VueMask);
 
 import { VueMaskDirective } from 'v-mask'
@@ -28,29 +53,15 @@ Vue.use(ElementsUI, Loading, Notification, MessageBox)
 axios.defaults.baseURL = process.env.VUE_APP_BACKEND_HOST
 axios.defaults.headers.common['Content-Type'] = 'application/json'
 axios.interceptors.request.use( function (config) {
-  /*
-  if (store.state.user.loggedIn) {
-    const token = store.state.user.jwt;
-    config.headers.common['Authorization'] = `Bearer ${token}`;
-    // config.headers.authorization = localStorage.getItem("token");
-  }
-
-   */
   return config;
 });
 axios.interceptors.response.use(undefined, (error) => {
-  /*
-  if (error.response.status === 401) {
-    store.dispatch('logOut');
-  }
-  if (error.response.status === 403) {
-    router.push('/spa/not-auth');
-  }
-
-   */
   return Promise.reject(error)
 })
 Vue.prototype.$http = axios
+
+import {config} from "@/config/config";
+Vue.prototype.$config = config
 
 
 Vue.config.productionTip = false
